@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Khách sạn </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/superslides.css" rel="stylesheet">
+    <link href="/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/css/select2.css" rel="stylesheet">
+    <link href="/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="front" data-spy="scroll" data-target="#top-inner" data-offset="0">
+<div id="main">
+    <div class="search-wrapper">
+        <div class="container">
+            <div class="search-inner clearfix">
+                <div class="search-field"><input type="text" class="form-control" value="" placeholder="Enter Your Search..."></div><a href="#" class="search-btn search-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="top-wrapper top-wrapper-dark">
+        <div class="top-inner" id="top-inner">
+            <div class="top1-wrapper">
+                <div class="container">
+                    <div class="top1 clearfix">
+                        <div class="social-wrapper">
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="account dropdown"><a class="dropdown-toggle" href="/login" role="button" id="dropdownAccount2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sign in</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownAccount2"><a class="dropdown-item" href="#">EDIT PROFILE</a><a class="dropdown-item" href="#">SIGN OUT</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top2-wrapper">
+                <div class="container">
+                    <div class="top2 clearfix">
+                        <header>
+                            <div class="logo_wrapper"><a href="index.html" class="logo"><img src="/images/logo-white.png" alt="" class="img-fluid"></a></div>
+                        </header>
+                        <nav class="navbar_ navbar navbar-expand-md clearfix"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                                <ul class="nav navbar-nav sf-menu clearfix">
+                                    <li class="nav-item sub-menu sub-menu-2"><a href="#" class="active nav-link">Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <div class="sf-mega">
+                                            <ul>
+                                                <li th:each="hotel:${hotels}">
+                                                    <a th:href="@{${'/hotel/' + hotel.id}}" th:text='${hotel.name}'> </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home" class="">
+        <div id="home-inner" class="home-inner" >
+            <div id="slides_wrapper" class="">
+                <div id="slides">
+                    <ul class="slides-container">
+                        <li><img src="/images/slide01.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide04.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide03.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide02.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide05.jpg" alt="" class="img"></li>
+                        <li><img src="/images/slide06.jpg" alt="" class="img"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-text-wrapper">
+                <div class="container">
+                    <div class="slide-text clearfix">
+                        <div class="img1"><img src="/images/slide-logo.png" alt="" class="img-fluid"></div>
+                        <div class="txt1"><span th:text="${h.name}"><i><img src="/images/slide-logo2.png" alt="" class="img-fluid"></i></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="top-wrapper"></div>
+    <div id="about">
+        <div class="container">
+            <div class="title1">VỀ CHÚNG TÔI</div>
+            <div class="title2">Web đặt phòng khách sạn N-Q-H</div>
+            <div class="about-slider-wrapper clearfix">
+                <div class="about-slider-left">
+                    <figure class="about-slider-thumb"><img src="/images/about00.jpg" alt="" class="img-fluid"></figure>
+                    <div class="slider-for">
+                        <div class="slider-item"><img src="/images/about01.jpg" alt="" class="img-fluid"></div>
+                        <div class="slider-item"><img src="/images/about02.jpg" alt="" class="img-fluid"></div>
+                        <div class="slider-item"><img src="/images/about03.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+                <div class="about-slider-right">
+                    <div class="slider-nav">
+                        <div class="slider-item">
+                            <div class="txt1" th:text="${h.country + ' ,' + h.city + ' ,' + h.address}" style="font-style: italic;"></div>
+                            <div class="txt2">
+                                <p th:text="${h.description}"></p>
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <div class="txt1">Kinh nghiệm nhiều năm đặt phòng </div>
+                            <div class="txt2">
+                                <p>Hệ thống đặt phòng qua web của chúng tôi đã tồn tại 5 năm. Chúng tôi đảm bảo sẽ làm hài lòng quý khách khi sử dụng dịch vụ.</p>
+                                <p>Đội ngũ nhân viên chuyên nghiệp sẽ giúp cho quý khách hàng thuận lợi hơn trong việc đặt phòng.</p>
+                            </div>
+
+                        </div>
+                        <div class="slider-item">
+                            <div class="txt1">Chất lượng phòng đảm bảo</div>
+                            <div class="txt2">
+                                <p>Chất lượng phòng cùng với chất lượng khách sạn của chúng tôi sẽ khiến cho quý khách hàng cảm thấy hài lòng. </p>
+                                <p>Chất lượng dịch vụ luôn là thứ được đặt lên hàng đầu, giúp cho khách hàng có trải nghiệm đáng nhớ tại đây.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rooms">
+        <div class="container">
+            <div class="title1">OUR ROOMS</div>
+            <div class="title2">Khách sạn của chúng tôi gồm có 3 loại phòng là Special, Vip, Normal</div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room04.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">SPECIAL</div>
+                                        <div class="txt2">START FROM $<span th:text="${spMinPrice}"></span>.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">Special Room</div>
+
+                                    <div class="txt3">Phòng đặc biệt với đầy đủ các tiện nghi, giúp cho bạn có trải nghiệm tuyệt vời khi nghỉ dưỡng tại đây. Phù hợp với các đại gia đình</div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/special?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/special?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room05.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">VIP</div>
+                                        <div class="txt2">START FROM $<span th:text="${vpMinPrice}"></span>.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">Vip Room</div>
+
+                                    <div class="txt3">Phòng VIP với chất lượng phòng tuyệt vời. Phù hợp với một gia đình nhỏ từ 3 - 4 người</div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/vip?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/vip?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="room-wrapper">
+                        <div class="room-inner">
+                            <div class="room">
+                                <figure><img src="/images/room06.jpg" alt="" class="img-fluid">
+                                    <figcaption>
+                                        <div class="txt1">NORMAL</div>
+                                        <div class="txt2">START FROM $<span th:text="${nmMinPrice}"></span>.00</div>
+                                    </figcaption>
+                                </figure>
+                                <div class="caption">
+                                    <div class="txt1">Normal Room</div>
+
+                                    <div class="txt3">Phòng thường với tiện nghi vừa đủ tuy nhiên vẫn sẽ đem lại trải nghiệm tuyệt vời cho khách hàng khi nghỉ dưỡng tại đây.</div>
+                                    <div class="txt4"><a th:href="@{${'/rooms/normal?hid='+ h.id}}">VIEW DETAIL<i class="fa fa-caret-right" aria-hidden="true"></i></a></div>
+                                </div>
+                                <div class="select-txt"><a th:href="@{${'/rooms/normal?hid='+ h.id}}"><span>SELECT THIS ROOM<i class="fa fa-angle-right" aria-hidden="true"></i></span></a></div>
+                                <div class="room-icons">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragment/usertmp :: div#foot"></div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/superfish.js"></script>
+    <script src="/js/jquery.superslides.js"></script>
+    <script src="/js/jquery.fancybox.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/select2.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="/js/jquery.appear.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>
